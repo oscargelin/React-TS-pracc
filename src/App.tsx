@@ -7,30 +7,11 @@ import data from "./data";
 import JokeData from "./jokeData";
 
 let jokes = JokeData.map((joke) => {
-  return (
-    <Joke
-      setup={joke.setup}
-      punchline={joke.punchline}
-      upVotes={joke.upVotes}
-      downVotes={joke.downVotes}
-      writer={{ name: joke.writer.name, age: joke.writer.age }}
-    />
-  );
+  return <Joke key={joke.id} {...joke} />;
 });
 
 let cards = data.map((card) => {
-  return (
-    <Card
-      id={card.id}
-      title={card.title}
-      description={card.description}
-      price={card.price}
-      coverImg={card.coverImg}
-      stats={{ rating: card.stats.rating, reviewCount: card.stats.reviewCount }}
-      location={card.location}
-      openSpots={card.openSpots}
-    />
-  );
+  return <Card key={card.id} {...card} />;
 });
 
 function App() {

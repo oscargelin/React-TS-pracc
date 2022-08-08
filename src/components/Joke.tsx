@@ -1,6 +1,6 @@
-import internal from "stream";
 import style from "./Joke.module.scss";
 interface Props {
+  id: number;
   setup: string;
   punchline: string;
   upVotes: number;

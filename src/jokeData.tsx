@@ -1,4 +1,5 @@
 type Joked = {
+  id: number;
   setup: string;
   punchline: string;
   upVotes: number;
@@ -10,6 +11,7 @@ type Joked = {
 };
 
 const jokeOne: Joked = {
+  id: 1,
   setup: "setup",
   punchline: "punchline",
   upVotes: 5,
@@ -17,6 +19,7 @@ const jokeOne: Joked = {
   writer: { name: "writerName", age: 55 },
 };
 const jokeTwo: Joked = {
+  id: 2,
   setup: "setup",
   punchline: "punchline",
   upVotes: 5,
@@ -24,6 +27,7 @@ const jokeTwo: Joked = {
   writer: { name: "writerName", age: 55 },
 };
 const jokeThree: Joked = {
+  id: 3,
   setup: "setup",
   punchline: "punchline",
   upVotes: 5,
@@ -31,6 +35,7 @@ const jokeThree: Joked = {
   writer: { name: "writerName", age: 55 },
 };
 const jokeFour: Joked = {
+  id: 4,
   setup: "setup",
   punchline: "punchline",
   upVotes: 5,
@@ -38,6 +43,7 @@ const jokeFour: Joked = {
   writer: { name: "writerName", age: 55 },
 };
 const jokeFive: Joked = {
+  id: 5,
   setup: "setup",
   punchline: "punchline",
   upVotes: 5,
