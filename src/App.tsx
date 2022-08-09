@@ -7,6 +7,7 @@ import data from "./data";
 import JokeData from "./jokeData";
 import Button from "./components/Button";
 import Memes from "./MemesData";
+import Player from "./components/Player";
 
 let jokes = JokeData.map((joke) => {
   return <Joke key={joke.id} {...joke} />;
@@ -30,19 +31,21 @@ function App() {
     ]);
   };
   const mappedThings = things.map((thing) => <h2 key={thing}>{thing}</h2>);
+
   const [memeImage, setMemeImage] = useState("");
-  const [isGoingOut, setIsGoingOut] = useState(false);
   const handleMemeImageClick = () => {
     setMemeImage(Memes.data.memes[generateRandomNumber()].url);
   };
-
+  const [isGoingOut, setIsGoingOut] = useState(false);
   const handleIsGoingOut = () => {
     setIsGoingOut((prevIsGoingOut) => {
       return prevIsGoingOut ? false : true;
     });
   };
+
   return (
     <div className="App">
+      <Player />
       <img src={memeImage}></img>
       <h1 onClick={handleIsGoingOut}>{isGoingOut ? "Yes" : "No"}</h1>
       <button onClick={handleMemeImageClick}>memeBtn</button>
