@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import YesToNoClicker from "./components/YesToNoClicker";
+import Counter from "./components/Counter";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <YesToNoClicker textValue="Yes" />
+      <Counter startingValue={5} />
     </div>
   );
 };
