@@ -3,6 +3,7 @@ import React, { useState } from "react";
 interface Props {
   on: boolean;
   id: number;
+  toggle: () => void;
 }
 
 const Box = (props: Props) => {
@@ -19,14 +20,12 @@ const Box = (props: Props) => {
     justifyContent: "center",
     alignItems: "center",
     textShadow: "0px 0px 2px red",
+    cursor: "pointer",
     backgroundColor: onOrOff ? "lightgreen" : "lightpink",
-  };
-  const handleClick = () => {
-    setOnOrOff((prevOnOrOff) => (onOrOff = !prevOnOrOff));
   };
 
   return (
-    <div style={styles} onClick={handleClick}>
+    <div style={styles} onClick={props.toggle}>
       {props.id}
     </div>
   );
