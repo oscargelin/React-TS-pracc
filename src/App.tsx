@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import Counter from "./components/Counter";
+import RanjoGodHacker from "./components/RanjoGodHacker";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <Counter startingValue={5} />
+      <RanjoGodHacker
+        answerOne="Click"
+        answerTwo="And"
+        answerThree="Find"
+        answerFour="Out"
+      />
     </div>
   );
 };
