@@ -1,33 +1,27 @@
 import React, { useState } from "react";
+import style from "../styles/Box.module.scss";
 
-interface Props {
-  on: boolean;
+interface IBox {
   id: number;
-  toggle: () => void;
 }
+const Box = ({ id }: IBox) => {
+  const [clicked, setClicked] = useState<boolean>(false);
 
-const Box = (props: Props) => {
-  let [onOrOff, setOnOrOff] = useState<boolean>(props.on);
-
-  const styles = {
-    color: "rgb(4, 0, 255)",
-    width: "150px",
-    height: "150px",
-    border: "1px solid orange",
-    borderRadius: "4px",
-    fontSize: "80px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textShadow: "0px 0px 2px red",
-    cursor: "pointer",
-    backgroundColor: onOrOff ? "lightgreen" : "lightpink",
+  const boxClicked = () => {
+    return setClicked((prevClicked) => !prevClicked);
   };
 
   return (
-    <div style={styles} onClick={props.toggle}>
-      {props.id}
-    </div>
+    <div
+      className={style.box}
+      onClick={boxClicked}
+      style={
+        clicked ? { backgroundColor: "aqua" } : { backgroundColor: "orange" }
+      }
+    ></div>
   );
 };
+
+//Lägg till useState osv klicka box ska byta färg.
+
 export default Box;
